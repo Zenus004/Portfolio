@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "Portfolio Website",
+        "description": "A portfolio website for full-stack developer.",
+        "tech": [
+            "Next.js",
+            "React",
+            "Framer Motion",
+            "Tailwind CSS",
+            "TypeScript"
+        ],
+        "image": "/assets/portfolio.jpg",
+        "repo": "https://github.com/Zenus004/Portfolio",
+        "demo": "https://demo.com"
+    }
+]
