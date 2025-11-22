@@ -41,14 +41,14 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // close mobile menu on navigation
+    // close mobile menu on navigation (helps SPA anchors)
     const handleNavClick = () => setIsOpen(false);
 
     return (
         <nav
             className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
-                ? "bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50 shadow-lg shadow-purple-500/5"
-                : "bg-transparent"
+                    ? "bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50 shadow-lg shadow-purple-500/5"
+                    : "bg-transparent"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,11 +75,10 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    {/* Desktop Menu with Enhanced Styling */}
+                    {/* Desktop Menu */}
                     <div className="hidden md:block">
                         <div className="flex items-center space-x-1 bg-slate-900/50 backdrop-blur-sm rounded-full px-2 py-2 border border-slate-800">
                             {navLinks.map((link) => (
-                                // Link used without legacyBehavior; pass className + onClick directly
                                 <Link
                                     key={link.name}
                                     href={link.href}
@@ -96,7 +95,7 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Enhanced Social Icons (Desktop) */}
+                    {/* Social Icons (Desktop) */}
                     <div className="hidden md:flex items-center gap-3">
                         <a
                             href="https://github.com/Zenus004"
@@ -120,7 +119,7 @@ export default function Navbar() {
                         </a>
                     </div>
 
-                    {/* Enhanced Mobile Menu Button */}
+                    {/* Mobile Menu Button */}
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen((v) => !v)}
@@ -133,7 +132,7 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Enhanced Mobile Menu (with framer-motion) */}
+            {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -152,7 +151,6 @@ export default function Navbar() {
                                     style={{ animationDelay: `${index * 0.05}s` }}
                                     onClick={() => {
                                         handleNavClick();
-                                        // small delay to allow closing animation then jump (optional)
                                         setTimeout(() => {
                                             const id = link.href.replace("#", "");
                                             const el = document.getElementById(id);
