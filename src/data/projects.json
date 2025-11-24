@@ -6,12 +6,12 @@
         "tech": [
             "Next.js",
             "React",
-            "Framer Motion",
             "Tailwind CSS",
-            "TypeScript"
+            "TypeScript",
+            "Framer Motion"
         ],
         "image": "/assets/portfolio.jpg",
         "repo": "https://github.com/Zenus004/Portfolio",
-        "demo": "https://demo.com"
+        "demo": "https://satyajyoti-mohanty-portfolio.vercel.app/"
     }
 ]
